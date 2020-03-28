@@ -13,13 +13,15 @@ class NewsVolley(val url:String, val contexto: Context, val newsAdapter: NewsRec
     val queue = Volley.newRequestQueue(contexto)
 
     fun callNewsAPI(){
+
         val dataNews = ArrayList<News>()
         val request = JsonObjectRequest(
             Request.Method.GET, url, null,
             Response.Listener<JSONObject> { response ->
-                val not = response.getJSONObject("data").getJSONArray("articles")
+                val not = response.getJSONArray("articles")
                 for (i in 0..not.length()-1){
                     val obj = not.getJSONObject(i)
+
                     val title = obj.getString("title")
                     val author = obj.getString("author")
                     val description = obj.getString("description")
@@ -28,12 +30,15 @@ class NewsVolley(val url:String, val contexto: Context, val newsAdapter: NewsRec
                     val image = obj.getString("urlToImage")
 
                     val news  =  News(title, author, description, content, date, image)
-                    dataNews.add(news)
+                    if(content != "null" || author != "null" || description != "null" || date != "null" || image != "null") {
+                        dataNews.add(news)
+                    }
                 }
                 newsAdapter.setData(dataNews)
+
             },
             Response.ErrorListener {
-                Log.e("Volley Error", it.toString())
+                Log.i("Volley Error", it.toString())
                 Toast.makeText(contexto, "That didn't work!" + it.toString(), Toast.LENGTH_SHORT).show()
             })
 

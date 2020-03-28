@@ -36,7 +36,6 @@ class NewsRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     val intent = Intent(contexto, NewsActivity::class.java)
                     intent.putExtra("news", news[position])
                     contexto.startActivity(intent)
-                    Toast.makeText(contexto, "INSIDE DUDE!!!", Toast.LENGTH_LONG).show()
                 }
             }
         }

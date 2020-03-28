@@ -43,14 +43,13 @@
         android:layout_width="230dp"
         android:layout_height="140dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:text="Description"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageViewCardImage"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCardTitle"
-        app:layout_constraintVertical_bias="0.476" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewCardTitle" />
 
     <TextView
         android:id="@+id/textViewCardTitle"
@@ -61,31 +60,46 @@
         android:scrollHorizontally="false"
         android:text="Tittle"
         android:textSize="4px"
+        android:textStyle="bold"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.105" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="230dp" />
+        app:layout_constraintGuide_begin="252dp" />
 
     <TextView
         android:id="@+id/textViewCardDate"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="14sp"
         android:textAlignment="textEnd"
         app:layout_constraintBottom_toTopOf="@+id/textViewCardTitle"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCardDescription"
+        app:layout_constraintVertical_bias="0.6" />/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
